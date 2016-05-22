@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="ResponsiveGridSample.Uwp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ResponsiveGridSample.Uwp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Rg="using:SourceChord.ResponsiveGrid"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Rg:ResponsiveGrid Margin="10">
+            <Rg:ResponsiveGrid.BreakPoints>
+                <Rg:BreakPoints XS_SM="567" SM_MD="678" MD_LG="789"/>
+            </Rg:ResponsiveGrid.BreakPoints>
+            <Button Rg:ResponsiveGrid.SM="3" Content="Button" VerticalAlignment="Top" Height="60" HorizontalAlignment="Stretch"/>
+            <Button Rg:ResponsiveGrid.SM="3" Content="Button" VerticalAlignment="Top" Height="80"/>
+            <Button Rg:ResponsiveGrid.SM="2" Content="Button" VerticalAlignment="Stretch"/>
+            <Button Rg:ResponsiveGrid.SM="2" Content="Button" VerticalAlignment="Top" Height="60"/>
+            <Button Rg:ResponsiveGrid.SM="2" Content="Button" VerticalAlignment="Top" Height="60"/>
+
+            <Button Rg:ResponsiveGrid.SM="2" Content="Button" VerticalAlignment="Top" Height="60"/>
+            <Button Rg:ResponsiveGrid.SM="2" Content="Button" VerticalAlignment="Top" Height="60"/>
+        </Rg:ResponsiveGrid>
+    </Grid>
+</Page>

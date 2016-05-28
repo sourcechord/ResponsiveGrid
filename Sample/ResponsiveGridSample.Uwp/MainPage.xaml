@@ -9,18 +9,47 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.Resources>
+            <Style TargetType="Border">
+                <Setter Property="BorderBrush" Value="Black" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="Background" Value="LightGray" />
+                <Setter Property="Height" Value="60" />
+            </Style>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontSize" Value="10" />
+            </Style>
+        </Grid.Resources>
         <Rg:ResponsiveGrid Margin="10">
             <Rg:ResponsiveGrid.BreakPoints>
-                <Rg:BreakPoints XS_SM="567" SM_MD="678" MD_LG="789"/>
+                <Rg:BreakPoints XS_SM="567" SM_MD="789" MD_LG="980"/>
             </Rg:ResponsiveGrid.BreakPoints>
-            <Button Rg:ResponsiveGrid.SM="3" Content="Button" VerticalAlignment="Top" Height="60" HorizontalAlignment="Stretch"/>
-            <Button Rg:ResponsiveGrid.SM="3" Content="Button" VerticalAlignment="Top" Height="80"/>
-            <Button Rg:ResponsiveGrid.SM="2" Content="Button" VerticalAlignment="Stretch"/>
-            <Button Rg:ResponsiveGrid.SM="2" Content="Button" VerticalAlignment="Top" Height="60"/>
-            <Button Rg:ResponsiveGrid.SM="2" Content="Button" VerticalAlignment="Top" Height="60"/>
 
-            <Button Rg:ResponsiveGrid.SM="2" Content="Button" VerticalAlignment="Top" Height="60"/>
-            <Button Rg:ResponsiveGrid.SM="2" Content="Button" VerticalAlignment="Top" Height="60"/>
+            <Border Rg:ResponsiveGrid.XS="12">
+                <TextBlock Text="[Header]&#xa;XS=12"/>
+            </Border>
+            <Border Rg:ResponsiveGrid.XS="6" Rg:ResponsiveGrid.SM="3" Rg:ResponsiveGrid.MD="2">
+                <TextBlock Text="[A]&#xa;XS=6&#xa;SM=3&#xa;MD=2"/>
+            </Border>
+            <Border Rg:ResponsiveGrid.XS="6" Rg:ResponsiveGrid.SM="3" Rg:ResponsiveGrid.MD="2">
+                <TextBlock Text="[B]&#xa;XS=6&#xa;SM=3&#xa;MD=2"/>
+            </Border>
+            <Border Rg:ResponsiveGrid.XS="6" Rg:ResponsiveGrid.SM="3" Rg:ResponsiveGrid.MD="2">
+                <TextBlock Text="[C]&#xa;XS=6&#xa;SM=3&#xa;MD=2"/>
+            </Border>
+            <Border Rg:ResponsiveGrid.XS="6" Rg:ResponsiveGrid.SM="3" Rg:ResponsiveGrid.MD="2">
+                <TextBlock Text="[D]&#xa;XS=6&#xa;SM=3&#xa;MD=2"/>
+            </Border>
+            <Border Rg:ResponsiveGrid.XS="12" Rg:ResponsiveGrid.SM="6" Rg:ResponsiveGrid.MD="2">
+                <TextBlock Text="[E]&#xa;XS=12&#xa;SM=6&#xa;MD=2"/>
+            </Border>
+            <Border Rg:ResponsiveGrid.XS="12" Rg:ResponsiveGrid.SM="6" Rg:ResponsiveGrid.MD="2">
+                <TextBlock Text="[F]&#xa;XS=12&#xa;SM=6&#xa;MD=2"/>
+            </Border>
+
+            <Border Rg:ResponsiveGrid.XS="12">
+                <TextBlock Text="[Footer]&#xa;XS=12"/>
+            </Border>
         </Rg:ResponsiveGrid>
     </Grid>
 </Page>

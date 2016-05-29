@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>ResponsiveGrid</id>
+        <version>0.1.0</version>
+        <title>ResponsiveGrid</title>
+        <authors>SourceChord</authors>
+        <owners>SourceChord</owners>
+        <licenseUrl>https://github.com/sourcechord/ResponsiveGrid/blob/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/sourcechord/ResponsiveGrid</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Responsive grid is a custom panel control for WPF/UWP. This library provides the grid layout system that is similar to Bootstrap framework.</description>
+        <copyright>Copyright 2016</copyright>
+        <tags>XAML WPF UWP Panel Library</tags>
+    </metadata>
+    <files>
+        <file src="..\Build\Wpf\Release\ResponsiveGrid.Wpf.dll" target="lib\net45\ResponsiveGrid.Wpf.dll" />
+        <file src="..\Build\Uwp\Release\ResponsiveGrid.Uwp.dll" target="lib\uap10.0\ResponsiveGrid.Uwp.dll" />
+        <file src="pack.bat" target="pack.bat" />
+    </files>
+</package>

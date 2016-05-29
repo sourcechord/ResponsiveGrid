@@ -15,6 +15,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResponsiveGridSample.Wpf", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResponsiveGridSample.Uwp", "Sample\ResponsiveGridSample.Uwp\ResponsiveGridSample.Uwp.csproj", "{02CB665D-872F-4F3A-A4EB-4E7D57E59ED2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{FE3A3640-9D36-4EBE-8EB2-5747250678E9}"
+	ProjectSection(SolutionItems) = preProject
+		Nuget\pack.bat = Nuget\pack.bat
+		Nuget\ResponsiveGrid.nuspec = Nuget\ResponsiveGrid.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		ResponsiveGrid.Shared\ResponsiveGrid.Shared.projitems*{62152df2-b723-4b9e-8a80-15138a05afec}*SharedItemsImports = 13

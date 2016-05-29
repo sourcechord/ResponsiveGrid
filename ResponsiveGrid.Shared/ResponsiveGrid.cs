@@ -91,6 +91,161 @@ namespace SourceChord.ResponsiveGrid
 
         #endregion
 
+        public static int GetXS_Offset(DependencyObject obj)
+        {
+            return (int)obj.GetValue(XS_OffsetProperty);
+        }
+        public static void SetXS_Offset(DependencyObject obj, int value)
+        {
+            obj.SetValue(XS_OffsetProperty, value);
+        }
+        // Using a DependencyProperty as the backing store for XS_Offset.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty XS_OffsetProperty =
+            DependencyProperty.RegisterAttached("XS_Offset", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0));
+
+        public static int GetSM_Offset(DependencyObject obj)
+        {
+            return (int)obj.GetValue(SM_OffsetProperty);
+        }
+        public static void SetSM_Offset(DependencyObject obj, int value)
+        {
+            obj.SetValue(SM_OffsetProperty, value);
+        }
+        // Using a DependencyProperty as the backing store for SM_Offset.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty SM_OffsetProperty =
+            DependencyProperty.RegisterAttached("SM_Offset", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0));
+
+        public static int GetMD_Offset(DependencyObject obj)
+        {
+            return (int)obj.GetValue(MD_OffsetProperty);
+        }
+        public static void SetMD_Offset(DependencyObject obj, int value)
+        {
+            obj.SetValue(MD_OffsetProperty, value);
+        }
+        // Using a DependencyProperty as the backing store for MD_Offset.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty MD_OffsetProperty =
+            DependencyProperty.RegisterAttached("MD_Offset", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0));
+
+        public static int GetLG_Offset(DependencyObject obj)
+        {
+            return (int)obj.GetValue(LG_OffsetProperty);
+        }
+        public static void SetLG_Offset(DependencyObject obj, int value)
+        {
+            obj.SetValue(LG_OffsetProperty, value);
+        }
+        // Using a DependencyProperty as the backing store for LG_Offset.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty LG_OffsetProperty =
+            DependencyProperty.RegisterAttached("LG_Offset", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0));
+
+        #endregion
+
+
+        #region Pushプロパティ
+        public static int GetXS_Push(DependencyObject obj)
+        {
+            return (int)obj.GetValue(XS_PushProperty);
+        }
+        public static void SetXS_Push(DependencyObject obj, int value)
+        {
+            obj.SetValue(XS_PushProperty, value);
+        }
+        // Using a DependencyProperty as the backing store for XS_Push.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty XS_PushProperty =
+            DependencyProperty.RegisterAttached("XS_Push", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0));
+
+        public static int GetSM_Push(DependencyObject obj)
+        {
+            return (int)obj.GetValue(SM_PushProperty);
+        }
+        public static void SetSM_Push(DependencyObject obj, int value)
+        {
+            obj.SetValue(SM_PushProperty, value);
+        }
+        // Using a DependencyProperty as the backing store for SM_Push.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty SM_PushProperty =
+            DependencyProperty.RegisterAttached("SM_Push", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0));
+
+        public static int GetMD_Push(DependencyObject obj)
+        {
+            return (int)obj.GetValue(MD_PushProperty);
+        }
+        public static void SetMD_Push(DependencyObject obj, int value)
+        {
+            obj.SetValue(MD_PushProperty, value);
+        }
+        // Using a DependencyProperty as the backing store for MD_Push.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty MD_PushProperty =
+            DependencyProperty.RegisterAttached("MD_Push", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0));
+
+        public static int GetLG_Push(DependencyObject obj)
+        {
+            return (int)obj.GetValue(LG_PushProperty);
+        }
+        public static void SetLG_Push(DependencyObject obj, int value)
+        {
+            obj.SetValue(LG_PushProperty, value);
+        }
+        // Using a DependencyProperty as the backing store for LG_Push.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty LG_PushProperty =
+            DependencyProperty.RegisterAttached("LG_Push", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0));
+
+        #endregion
+
+
+        #region Pullプロパティ
+        public static int GetXS_Pull(DependencyObject obj)
+        {
+            return (int)obj.GetValue(XS_PullProperty);
+        }
+        public static void SetXS_Pull(DependencyObject obj, int value)
+        {
+            obj.SetValue(XS_PullProperty, value);
+        }
+        // Using a DependencyProperty as the backing store for XS_Pull.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty XS_PullProperty =
+            DependencyProperty.RegisterAttached("XS_Pull", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0));
+
+        public static int GetSM_Pull(DependencyObject obj)
+        {
+            return (int)obj.GetValue(SM_PullProperty);
+        }
+        public static void SetSM_Pull(DependencyObject obj, int value)
+        {
+            obj.SetValue(SM_PullProperty, value);
+        }
+        // Using a DependencyProperty as the backing store for SM_Pull.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty SM_PullProperty =
+            DependencyProperty.RegisterAttached("SM_Pull", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0));
+
+
+        public static int GetMD_Pull(DependencyObject obj)
+        {
+            return (int)obj.GetValue(MD_PullProperty);
+        }
+        public static void SetMD_Pull(DependencyObject obj, int value)
+        {
+            obj.SetValue(MD_PullProperty, value);
+        }
+        // Using a DependencyProperty as the backing store for MD_Pull.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty MD_PullProperty =
+            DependencyProperty.RegisterAttached("MD_Pull", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0));
+
+        public static int GetLG_Pull(DependencyObject obj)
+        {
+            return (int)obj.GetValue(LG_PullProperty);
+        }
+        public static void SetLG_Pull(DependencyObject obj, int value)
+        {
+            obj.SetValue(LG_PullProperty, value);
+        }
+        // Using a DependencyProperty as the backing store for LG_Pull.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty LG_PullProperty =
+            DependencyProperty.RegisterAttached("LG_Pull", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0));
+
+        #endregion
+
 
         #region 読み取り専用の添付プロパティ
         public static int GetActualColumn(DependencyObject obj)
@@ -117,7 +272,7 @@ namespace SourceChord.ResponsiveGrid
         public static readonly DependencyProperty ActualRowProperty =
             DependencyProperty.RegisterAttached("ActualRow", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0));
 
-#endregion
+        #endregion
 
         protected override Size MeasureOverride(Size availableSize)
         {
@@ -133,17 +288,20 @@ namespace SourceChord.ResponsiveGrid
                 if (child != null)
                 {
                     var span = this.GetSpan(child, availableSize.Width);
-                    if (count + span > this.MaxDivision)
+                    var offset = this.GetOffset(child, availableSize.Width);
+                    var push = this.GetPush(child, availableSize.Width);
+                    var pull = this.GetPull(child, availableSize.Width);
+                    if (count + span + offset > this.MaxDivision)
                     {
                         // リセット
                         currentRow++;
                         count = 0;
                     }
 
-                    SetActualColumn(child, count);
+                    SetActualColumn(child, count + offset + push - pull);
                     SetActualRow(child, currentRow);
 
-                    count += span;
+                    count += (span + offset);
 
                     var size = new Size(availableWidth * span, double.PositiveInfinity);
                     child.Measure(size);
@@ -161,6 +319,93 @@ namespace SourceChord.ResponsiveGrid
             var getSM = new Func<UIElement, int>((o) => { var x = GetSM(o); return x != 0 ? x : getXS(o); });
             var getMD = new Func<UIElement, int>((o) => { var x = GetMD(o); return x != 0 ? x : getSM(o); });
             var getLG = new Func<UIElement, int>((o) => { var x = GetLG(o); return x != 0 ? x : getMD(o); });
+
+            if (width < this.BreakPoints.XS_SM)
+            {
+                span = getXS(element);
+            }
+            else if (width < this.BreakPoints.SM_MD)
+            {
+                span = getSM(element);
+            }
+            else if (width < this.BreakPoints.MD_LG)
+            {
+                span = getMD(element);
+            }
+            else
+            {
+                span = getLG(element);
+            }
+
+            return Math.Min(Math.Max(0, span), this.MaxDivision); ;
+        }
+
+        protected int GetOffset(UIElement element, double width)
+        {
+            var span = 0;
+
+            var getXS = new Func<UIElement, int>((o) => { var x = GetXS_Offset(o); return x != 0 ? x : 0; });
+            var getSM = new Func<UIElement, int>((o) => { var x = GetSM_Offset(o); return x != 0 ? x : getXS(o); });
+            var getMD = new Func<UIElement, int>((o) => { var x = GetMD_Offset(o); return x != 0 ? x : getSM(o); });
+            var getLG = new Func<UIElement, int>((o) => { var x = GetLG_Offset(o); return x != 0 ? x : getMD(o); });
+
+            if (width < this.BreakPoints.XS_SM)
+            {
+                span = getXS(element);
+            }
+            else if (width < this.BreakPoints.SM_MD)
+            {
+                span = getSM(element);
+            }
+            else if (width < this.BreakPoints.MD_LG)
+            {
+                span = getMD(element);
+            }
+            else
+            {
+                span = getLG(element);
+            }
+
+            return Math.Min(Math.Max(0, span), this.MaxDivision); ;
+        }
+
+        protected int GetPush(UIElement element, double width)
+        {
+            var span = 0;
+
+            var getXS = new Func<UIElement, int>((o) => { var x = GetXS_Push(o); return x != 0 ? x : 0; });
+            var getSM = new Func<UIElement, int>((o) => { var x = GetSM_Push(o); return x != 0 ? x : getXS(o); });
+            var getMD = new Func<UIElement, int>((o) => { var x = GetMD_Push(o); return x != 0 ? x : getSM(o); });
+            var getLG = new Func<UIElement, int>((o) => { var x = GetLG_Push(o); return x != 0 ? x : getMD(o); });
+
+            if (width < this.BreakPoints.XS_SM)
+            {
+                span = getXS(element);
+            }
+            else if (width < this.BreakPoints.SM_MD)
+            {
+                span = getSM(element);
+            }
+            else if (width < this.BreakPoints.MD_LG)
+            {
+                span = getMD(element);
+            }
+            else
+            {
+                span = getLG(element);
+            }
+
+            return Math.Min(Math.Max(0, span), this.MaxDivision); ;
+        }
+
+        protected int GetPull(UIElement element, double width)
+        {
+            var span = 0;
+
+            var getXS = new Func<UIElement, int>((o) => { var x = GetXS_Pull(o); return x != 0 ? x : 0; });
+            var getSM = new Func<UIElement, int>((o) => { var x = GetSM_Pull(o); return x != 0 ? x : getXS(o); });
+            var getMD = new Func<UIElement, int>((o) => { var x = GetMD_Pull(o); return x != 0 ? x : getSM(o); });
+            var getLG = new Func<UIElement, int>((o) => { var x = GetLG_Pull(o); return x != 0 ? x : getMD(o); });
 
             if (width < this.BreakPoints.XS_SM)
             {

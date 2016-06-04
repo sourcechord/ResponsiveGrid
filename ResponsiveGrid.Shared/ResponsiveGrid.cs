@@ -16,29 +16,13 @@ using Windows.UI.Xaml.Controls;
 
 namespace SourceChord.ResponsiveGrid
 {
-    public class BreakPoints
-    {
-        public double XS_SM { get; set; }
-        public double SM_MD { get; set; }
-        public double MD_LG { get; set; }
-
-        public BreakPoints()
-        {
-        }
-    }
     public partial class ResponsiveGrid : Panel
     {
         public ResponsiveGrid()
         {
             this.MaxDivision = 12;
+            this.BreakPoints = new BreakPoints();
         }
-
-        #region ResponsiveGrid自体に設定する依存関係プロパティ
-        // 各種ブレークポイントの設定用プロパティ
-        public int MaxDivision { get; set; }
-
-        public BreakPoints BreakPoints { get; set; }
-        #endregion
 
         protected override Size MeasureOverride(Size availableSize)
         {

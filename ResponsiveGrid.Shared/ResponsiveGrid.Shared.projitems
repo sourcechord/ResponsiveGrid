@@ -9,6 +9,7 @@
     <Import_RootNamespace>SourceChord.ResponsiveGrid</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)BreakPoints.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ResponsiveGrid.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ResponsiveGrid.Properties.cs" />
   </ItemGroup>

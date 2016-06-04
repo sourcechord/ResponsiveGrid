@@ -18,6 +18,30 @@ namespace SourceChord.ResponsiveGrid
 {
     public partial class ResponsiveGrid
     {
+        #region ResponsiveGrid自体に設定する依存関係プロパティ
+        // 各種ブレークポイントの設定用プロパティ
+        public int MaxDivision
+        {
+            get { return (int)GetValue(MaxDivisionProperty); }
+            set { SetValue(MaxDivisionProperty, value); }
+        }
+        // Using a DependencyProperty as the backing store for MaxDivision.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty MaxDivisionProperty =
+            DependencyProperty.Register("MaxDivision", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(12));
+
+
+        public BreakPoints BreakPoints
+        {
+            get { return (BreakPoints)GetValue(BreakPointsProperty); }
+            set { SetValue(BreakPointsProperty, value); }
+        }
+        // Using a DependencyProperty as the backing store for BreakPoints.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty BreakPointsProperty =
+            DependencyProperty.Register("BreakPoints", typeof(BreakPoints), typeof(ResponsiveGrid), new PropertyMetadata(null));
+        #endregion
+
+
+
         #region 各子要素のサイズを決めるための添付プロパティ
         public static int GetXS(DependencyObject obj)
         {

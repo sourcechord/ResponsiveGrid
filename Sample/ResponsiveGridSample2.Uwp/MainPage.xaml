@@ -7,7 +7,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition />
@@ -91,13 +91,6 @@
             <local:ParamEditor />
             <local:ParamEditor />
             <local:ParamEditor />
-
-            <!--<Border Rg:ResponsiveGrid.XS="6" Rg:ResponsiveGrid.SM="3" Rg:ResponsiveGrid.MD="2">
-                <TextBlock Text="[A]&#xa;XS=6&#xa;SM=3&#xa;MD=2"/>
-            </Border>
-            <Border Rg:ResponsiveGrid.XS="6" Rg:ResponsiveGrid.SM="3" Rg:ResponsiveGrid.MD="2">
-                <TextBlock Text="[B]&#xa;XS=6&#xa;SM=3&#xa;MD=2"/>
-            </Border>-->
         </Rg:ResponsiveGrid>
     </Grid>
 </Page>

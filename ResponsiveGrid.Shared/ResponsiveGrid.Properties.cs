@@ -25,19 +25,46 @@ namespace SourceChord.ResponsiveGrid
             get { return (int)GetValue(MaxDivisionProperty); }
             set { SetValue(MaxDivisionProperty, value); }
         }
+#if WINDOWS_WPF
         // Using a DependencyProperty as the backing store for MaxDivision.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MaxDivisionProperty =
-            DependencyProperty.Register("MaxDivision", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(12));
+            DependencyProperty.Register("MaxDivision",
+                                        typeof(int),
+                                        typeof(ResponsiveGrid),
+                                        new FrameworkPropertyMetadata(12, FrameworkPropertyMetadataOptions.AffectsMeasure));
+#elif WINDOWS_UWP
+        // Using a DependencyProperty as the backing store for MaxDivision.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty MaxDivisionProperty =
+            DependencyProperty.Register("MaxDivision", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(12, OnDependencyPropertyChanged));
 
+        private static void OnDependencyPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var element = d as FrameworkElement;
+            var parent = element?.Parent as ResponsiveGrid;
+            parent?.InvalidateMeasure();
+        }
+#else
+#endif
 
         public BreakPoints BreakPoints
         {
             get { return (BreakPoints)GetValue(BreakPointsProperty); }
             set { SetValue(BreakPointsProperty, value); }
         }
+#if WINDOWS_WPF
         // Using a DependencyProperty as the backing store for BreakPoints.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty BreakPointsProperty =
-            DependencyProperty.Register("BreakPoints", typeof(BreakPoints), typeof(ResponsiveGrid), new PropertyMetadata(null));
+            DependencyProperty.Register("BreakPoints",
+                                        typeof(BreakPoints),
+                                        typeof(ResponsiveGrid),
+                                        new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsMeasure));
+#elif WINDOWS_UWP
+        // Using a DependencyProperty as the backing store for BreakPoints.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty BreakPointsProperty =
+            DependencyProperty.Register("BreakPoints", typeof(BreakPoints), typeof(ResponsiveGrid), new PropertyMetadata(null, OnDependencyPropertyChanged));
+#else
+#endif
+
         #endregion
 
 
@@ -61,9 +88,9 @@ namespace SourceChord.ResponsiveGrid
 #elif WINDOWS_UWP
         // Using a DependencyProperty as the backing store for XS.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty XSProperty =
-            DependencyProperty.RegisterAttached("XS", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnPropChanged));
+            DependencyProperty.RegisterAttached("XS", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnAttachedPropertyChanged));
 
-        private static void OnPropChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void OnAttachedPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var element = d as FrameworkElement;
             var parent = element?.Parent as ResponsiveGrid;
@@ -90,7 +117,7 @@ namespace SourceChord.ResponsiveGrid
 #elif WINDOWS_UWP
         // Using a DependencyProperty as the backing store for SM.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty SMProperty =
-            DependencyProperty.RegisterAttached("SM", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnPropChanged));
+            DependencyProperty.RegisterAttached("SM", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnAttachedPropertyChanged));
 #else
 #endif
 
@@ -112,7 +139,7 @@ namespace SourceChord.ResponsiveGrid
 #elif WINDOWS_UWP
         // Using a DependencyProperty as the backing store for MD.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MDProperty =
-            DependencyProperty.RegisterAttached("MD", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnPropChanged));
+            DependencyProperty.RegisterAttached("MD", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnAttachedPropertyChanged));
 #else
 #endif
 
@@ -134,7 +161,7 @@ namespace SourceChord.ResponsiveGrid
 #elif WINDOWS_UWP
         // Using a DependencyProperty as the backing store for LG.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty LGProperty =
-            DependencyProperty.RegisterAttached("LG", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnPropChanged));
+            DependencyProperty.RegisterAttached("LG", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnAttachedPropertyChanged));
 #else
 #endif
 
@@ -159,7 +186,7 @@ namespace SourceChord.ResponsiveGrid
 #elif WINDOWS_UWP
         // Using a DependencyProperty as the backing store for XS_Offset.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty XS_OffsetProperty =
-            DependencyProperty.RegisterAttached("XS_Offset", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnPropChanged));
+            DependencyProperty.RegisterAttached("XS_Offset", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnAttachedPropertyChanged));
 #else
 #endif
 
@@ -181,7 +208,7 @@ namespace SourceChord.ResponsiveGrid
 #elif WINDOWS_UWP
         // Using a DependencyProperty as the backing store for SM_Offset.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty SM_OffsetProperty =
-            DependencyProperty.RegisterAttached("SM_Offset", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnPropChanged));
+            DependencyProperty.RegisterAttached("SM_Offset", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnAttachedPropertyChanged));
 #else
 #endif
 
@@ -203,7 +230,7 @@ namespace SourceChord.ResponsiveGrid
 #elif WINDOWS_UWP
         // Using a DependencyProperty as the backing store for MD_Offset.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MD_OffsetProperty =
-            DependencyProperty.RegisterAttached("MD_Offset", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnPropChanged));
+            DependencyProperty.RegisterAttached("MD_Offset", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnAttachedPropertyChanged));
 #else
 #endif
 
@@ -225,7 +252,7 @@ namespace SourceChord.ResponsiveGrid
 #elif WINDOWS_UWP
         // Using a DependencyProperty as the backing store for LG_Offset.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty LG_OffsetProperty =
-            DependencyProperty.RegisterAttached("LG_Offset", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnPropChanged));
+            DependencyProperty.RegisterAttached("LG_Offset", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnAttachedPropertyChanged));
 #else
 #endif
 
@@ -251,7 +278,7 @@ namespace SourceChord.ResponsiveGrid
 #elif WINDOWS_UWP
         // Using a DependencyProperty as the backing store for XS_Push.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty XS_PushProperty =
-            DependencyProperty.RegisterAttached("XS_Push", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnPropChanged));
+            DependencyProperty.RegisterAttached("XS_Push", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnAttachedPropertyChanged));
 #else
 #endif
 
@@ -273,7 +300,7 @@ namespace SourceChord.ResponsiveGrid
 #elif WINDOWS_UWP
         // Using a DependencyProperty as the backing store for SM_Push.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty SM_PushProperty =
-            DependencyProperty.RegisterAttached("SM_Push", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnPropChanged));
+            DependencyProperty.RegisterAttached("SM_Push", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnAttachedPropertyChanged));
 #else
 #endif
 
@@ -295,7 +322,7 @@ namespace SourceChord.ResponsiveGrid
 #elif WINDOWS_UWP
         // Using a DependencyProperty as the backing store for MD_Push.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MD_PushProperty =
-            DependencyProperty.RegisterAttached("MD_Push", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnPropChanged));
+            DependencyProperty.RegisterAttached("MD_Push", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnAttachedPropertyChanged));
 #else
 #endif
 
@@ -317,7 +344,7 @@ namespace SourceChord.ResponsiveGrid
 #elif WINDOWS_UWP
         // Using a DependencyProperty as the backing store for LG_Push.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty LG_PushProperty =
-            DependencyProperty.RegisterAttached("LG_Push", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnPropChanged));
+            DependencyProperty.RegisterAttached("LG_Push", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnAttachedPropertyChanged));
 #else
 #endif
 
@@ -343,7 +370,7 @@ namespace SourceChord.ResponsiveGrid
 #elif WINDOWS_UWP
         // Using a DependencyProperty as the backing store for XS_Pull.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty XS_PullProperty =
-            DependencyProperty.RegisterAttached("XS_Pull", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnPropChanged));
+            DependencyProperty.RegisterAttached("XS_Pull", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnAttachedPropertyChanged));
 #else
 #endif
 
@@ -365,7 +392,7 @@ namespace SourceChord.ResponsiveGrid
 #elif WINDOWS_UWP
         // Using a DependencyProperty as the backing store for SM_Pull.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty SM_PullProperty =
-            DependencyProperty.RegisterAttached("SM_Pull", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnPropChanged));
+            DependencyProperty.RegisterAttached("SM_Pull", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnAttachedPropertyChanged));
 #else
 #endif
 
@@ -387,7 +414,7 @@ namespace SourceChord.ResponsiveGrid
 #elif WINDOWS_UWP
         // Using a DependencyProperty as the backing store for MD_Pull.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MD_PullProperty =
-            DependencyProperty.RegisterAttached("MD_Pull", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnPropChanged));
+            DependencyProperty.RegisterAttached("MD_Pull", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnAttachedPropertyChanged));
 #else
 #endif
 
@@ -409,7 +436,7 @@ namespace SourceChord.ResponsiveGrid
 #elif WINDOWS_UWP
         // Using a DependencyProperty as the backing store for LG_Pull.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty LG_PullProperty =
-            DependencyProperty.RegisterAttached("LG_Pull", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnPropChanged));
+            DependencyProperty.RegisterAttached("LG_Pull", typeof(int), typeof(ResponsiveGrid), new PropertyMetadata(0, OnAttachedPropertyChanged));
 #else
 #endif
 

@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="ResponsiveGridSample2.Wpf.ParamEditor"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:Rg="clr-namespace:SourceChord.ResponsiveGrid;assembly=ResponsiveGrid.Wpf"
+             xmlns:rg="clr-namespace:SourceChord.ResponsiveGrid;assembly=ResponsiveGrid.Wpf"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:ResponsiveGridSample2.Wpf"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -46,7 +46,7 @@
                       Margin="2"
                       HorizontalAlignment="Left"
                       ItemsSource="{StaticResource SpanList}"
-                      SelectedValue="{Binding Path=(Rg:ResponsiveGrid.XS),
+                      SelectedValue="{Binding Path=(rg:ResponsiveGrid.XS),
                                               RelativeSource={RelativeSource FindAncestor,
                                                                              AncestorType={x:Type local:ParamEditor}}}" />
 
@@ -60,7 +60,7 @@
                       Margin="2"
                       HorizontalAlignment="Left"
                       ItemsSource="{StaticResource SpanList}"
-                      SelectedValue="{Binding Path=(Rg:ResponsiveGrid.SM),
+                      SelectedValue="{Binding Path=(rg:ResponsiveGrid.SM),
                                               RelativeSource={RelativeSource FindAncestor,
                                                                              AncestorType={x:Type local:ParamEditor}}}" />
 
@@ -74,7 +74,7 @@
                       Margin="2"
                       HorizontalAlignment="Left"
                       ItemsSource="{StaticResource SpanList}"
-                      SelectedValue="{Binding Path=(Rg:ResponsiveGrid.MD),
+                      SelectedValue="{Binding Path=(rg:ResponsiveGrid.MD),
                                               RelativeSource={RelativeSource FindAncestor,
                                                                              AncestorType={x:Type local:ParamEditor}}}" />
 
@@ -88,7 +88,7 @@
                       Margin="2"
                       HorizontalAlignment="Left"
                       ItemsSource="{StaticResource SpanList}"
-                      SelectedValue="{Binding Path=(Rg:ResponsiveGrid.LG),
+                      SelectedValue="{Binding Path=(rg:ResponsiveGrid.LG),
                                               RelativeSource={RelativeSource FindAncestor,
                                                                              AncestorType={x:Type local:ParamEditor}}}" />
         </Grid>

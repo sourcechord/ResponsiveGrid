@@ -1,7 +1,7 @@
 ﻿<Page x:Class="ResponsiveGridSample2.Uwp.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:Rg="using:SourceChord.ResponsiveGrid"
+      xmlns:rg="using:SourceChord.ResponsiveGrid"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="using:ResponsiveGridSample2.Uwp"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -80,17 +80,17 @@
             <Line Grid.Column="11" />
         </Grid>
 
-        <Rg:ResponsiveGrid Grid.Row="1" x:Name="rgrid" >
-            <Rg:ResponsiveGrid.BreakPoints>
-                <Rg:BreakPoints MD_LG="980"
+        <rg:ResponsiveGrid Grid.Row="1" x:Name="rgrid" >
+            <rg:ResponsiveGrid.BreakPoints>
+                <rg:BreakPoints MD_LG="980"
                                 SM_MD="789"
                                 XS_SM="567" />
-            </Rg:ResponsiveGrid.BreakPoints>
+            </rg:ResponsiveGrid.BreakPoints>
 
             <local:ParamEditor />
             <local:ParamEditor />
             <local:ParamEditor />
             <local:ParamEditor />
-        </Rg:ResponsiveGrid>
+        </rg:ResponsiveGrid>
     </Grid>
 </Page>

@@ -16,6 +16,5 @@
     <files>
         <file src="..\Build\Wpf\Release\ResponsiveGrid.Wpf.dll" target="lib\net45\ResponsiveGrid.Wpf.dll" />
         <file src="..\Build\Uwp\Release\ResponsiveGrid.Uwp.dll" target="lib\uap10.0\ResponsiveGrid.Uwp.dll" />
-        <file src="pack.bat" target="pack.bat" />
     </files>
 </package>

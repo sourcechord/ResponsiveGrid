@@ -6,6 +6,7 @@ using System.Text;
 #if WINDOWS_WPF
 using System.Windows;
 using System.Windows.Controls;
+using System.ComponentModel;
 #elif WINDOWS_UWP
 using Windows.Foundation;
 using Windows.UI.Xaml;
@@ -15,6 +16,9 @@ using Windows.UI.Xaml.Controls;
 
 namespace SourceChord.ResponsiveGrid
 {
+#if WINDOWS_WPF
+    [TypeConverter(typeof(BreakPointsTypeConverter))]
+#endif
     public class BreakPoints : DependencyObject
     {
         public double XS_SM

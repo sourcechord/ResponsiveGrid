@@ -65,6 +65,18 @@ namespace SourceChord.ResponsiveGrid
 #else
 #endif
 
+#if WINDOWS_WPF
+        public bool ShowGridLines
+        {
+            get { return (bool)GetValue(ShowGridLinesProperty); }
+            set { SetValue(ShowGridLinesProperty, value); }
+        }
+        // Using a DependencyProperty as the backing store for ShowGridLines.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ShowGridLinesProperty =
+            DependencyProperty.Register("ShowGridLines", typeof(bool), typeof(ResponsiveGrid), new PropertyMetadata(false));
+#endif
+
+
         #endregion
 
 

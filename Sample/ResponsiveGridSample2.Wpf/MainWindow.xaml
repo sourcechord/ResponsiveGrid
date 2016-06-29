@@ -41,24 +41,8 @@
                                     Path=BreakPoints.MD_LG}" />
             <TextBlock Text="px" />
         </StackPanel>
-        <Grid Grid.Row="1" ShowGridLines="True">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-        </Grid>
 
-        <rg:ResponsiveGrid x:Name="rgrid" Grid.Row="1">
+        <rg:ResponsiveGrid x:Name="rgrid" Grid.Row="1" ShowGridLines="True">
             <rg:ResponsiveGrid.BreakPoints>
                 <rg:BreakPoints MD_LG="789"
                                 SM_MD="567"

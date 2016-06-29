@@ -6,6 +6,7 @@ using System.Text;
 #if WINDOWS_WPF
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 #elif WINDOWS_UWP
 using Windows.Foundation;
 using Windows.UI.Xaml;
@@ -208,5 +209,31 @@ namespace SourceChord.ResponsiveGrid
             }
             return base.ArrangeOverride(finalSize);
         }
+
+#if WINDOWS_WPF
+        // ShowGridLinesで表示する際に利用するペンの定義
+        private static readonly Pen _guidePen1
+            = new Pen(Brushes.Yellow, 1);
+        private static readonly Pen _guidePen2
+            = new Pen(Brushes.Blue, 1) { DashStyle = new DashStyle(new double[] { 4, 4 }, 0) };
+
+        protected override void OnRender(DrawingContext dc)
+        {
+            base.OnRender(dc);
+            // ShowGridLinesが有効な場合、各種エレメントを描画する前に、ガイド用のグリッドを描画する。
+            if (this.ShowGridLines)
+            {
+                var gridNum = this.MaxDivision;
+                var unit = this.ActualWidth / gridNum;
+                for (var i = 0; i <= gridNum; i++)
+                {
+                    var x = (int)(unit * i);
+                    dc.DrawLine(_guidePen1, new Point(x, 0), new Point(x, this.ActualHeight));
+                    dc.DrawLine(_guidePen2, new Point(x, 0), new Point(x, this.ActualHeight));
+                }
+            }
+        }
+#endif
+
     }
 }

@@ -20,6 +20,7 @@
                 <Setter Property="TextBlock.FontSize" Value="10" />
             </Style>
         </Grid.Resources>
+        <rg:ResponsiveGrid Margin="10" BreakPoints="345, 567, 789">
 
             <Border rg:ResponsiveGrid.XS="12">
                 <TextBlock Text="[Header]&#xa;XS=12"/>

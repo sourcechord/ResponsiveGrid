@@ -38,10 +38,14 @@ namespace SourceChord.ResponsiveGrid
             {
                 if (child != null)
                 {
+                    // Collapsedの時はレイアウトしない
+                    if (child.Visibility == Visibility.Collapsed) { continue; }
+
                     var span = this.GetSpan(child, availableSize.Width);
                     var offset = this.GetOffset(child, availableSize.Width);
                     var push = this.GetPush(child, availableSize.Width);
                     var pull = this.GetPull(child, availableSize.Width);
+                    
                     if (count + span + offset > this.MaxDivision)
                     {
                         // リセット

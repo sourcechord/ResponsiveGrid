@@ -1,7 +1,8 @@
 # ResponsiveGrid
-Responsive grid is a custom panel control for WPF/UWP.  
+ResponsiveGrid is a custom panel control for WPF/UWP.  
 This library provides the grid layout system that is similar to Bootstrap framework.
 
+![demo](./docs/Demo.gif)
 
 ## features
 * ResponsiveGrid class 

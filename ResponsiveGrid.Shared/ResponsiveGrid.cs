@@ -63,7 +63,14 @@ namespace SourceChord.ResponsiveGrid
                 }
             }
 
-            return base.MeasureOverride(availableSize);
+            // 行ごとにグルーピングする
+            var group = this.Children.OfType<UIElement>()
+                                     .GroupBy(x => GetActualRow(x));
+
+            var totalWidth = group.Max(rows => rows.Sum(o => o.DesiredSize.Width));
+            var totalHeight = group.Sum(rows => rows.Max(o => o.DesiredSize.Height));
+
+            return new Size(totalWidth, totalHeight);
         }
 
         protected int GetSpan(UIElement element, double width)

@@ -33,6 +33,10 @@ namespace SourceChord.ResponsiveGrid
             var availableWidth = double.IsPositiveInfinity(availableSize.Width) ? double.PositiveInfinity : availableSize.Width / this.MaxDivision;
             var children = this.Children.OfType<UIElement>();
 
+            // パネルが必要とするサイズの計算用
+            var totalRowWidth = 0.0;
+            var maxRowHeight = 0.0;
+            var totalSize = new Size();
 
             foreach (UIElement child in this.Children)
             {
@@ -51,6 +55,13 @@ namespace SourceChord.ResponsiveGrid
                         // リセット
                         currentRow++;
                         count = 0;
+
+                        // パネル全体が必要とするサイズを更新
+                        totalSize.Width = Math.Max(totalSize.Width, totalRowWidth);
+                        totalSize.Height += maxRowHeight;
+
+                        totalRowWidth = 0;
+                        maxRowHeight = 0;
                     }
 
                     SetActualColumn(child, count + offset + push - pull);
@@ -60,17 +71,14 @@ namespace SourceChord.ResponsiveGrid
 
                     var size = new Size(availableWidth * span, double.PositiveInfinity);
                     child.Measure(size);
+
+                    // 現在の行の幅、要素の最大高さを計算
+                    totalRowWidth += child.DesiredSize.Width;
+                    maxRowHeight = Math.Max(maxRowHeight, child.DesiredSize.Height);
                 }
             }
 
-            // 行ごとにグルーピングする
-            var group = this.Children.OfType<UIElement>()
-                                     .GroupBy(x => GetActualRow(x));
-
-            var totalWidth = group.Max(rows => rows.Sum(o => o.DesiredSize.Width));
-            var totalHeight = group.Sum(rows => rows.Max(o => o.DesiredSize.Height));
-
-            return new Size(totalWidth, totalHeight);
+            return totalSize;
         }
 
         protected int GetSpan(UIElement element, double width)

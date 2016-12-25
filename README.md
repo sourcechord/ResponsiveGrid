@@ -1,4 +1,8 @@
 # ResponsiveGrid
+
+**This project has been moved to GridExtra**  
+https://github.com/sourcechord/GridExtra
+
 ResponsiveGrid is a custom panel control for WPF/UWP.  
 This library provides the grid layout system that is similar to Bootstrap framework.
 
